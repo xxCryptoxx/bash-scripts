@@ -1,7 +1,15 @@
 #! bin/bash
 echo "Hello there";
 echo "";
-mkdir {1..n}; //replace 'n' with the amount of directories you want created 
+echo "How many directories do you want? type 1..20";
+read n
+
+
+for i in $(seq 1 $n)
+do 
+	mkdir $i
+done
+
 ls;
 echo "";
 echo "Name of file to create?";
