@@ -8,8 +8,25 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        echo 'test 2'
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'test 2'
+          }
+        }
+
+        stage('JUnit') {
+          steps {
+            echo 'test 4'
+          }
+        }
+
+        stage('DBUnit') {
+          steps {
+            echo 'test 5'
+          }
+        }
+
       }
     }
 
