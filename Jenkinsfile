@@ -1,45 +1,26 @@
 pipeline {
-  agent {
-    node {
-      label 'Build'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
-      parallel {
-        stage('DB Unit') {
-          steps {
-            echo 'DBUnit'
-          }
-        }
-
-        stage('J Unit') {
-          steps {
-            echo 'JUNIT'
-          }
-        }
-
+      steps {
+        echo 'test 1'
       }
     }
 
-    stage('Dev') {
+    stage('Test') {
       steps {
-        echo 'Dev'
-      }
-    }
-
-    stage('Staging') {
-      steps {
-        echo 'Staging'
+        echo 'test 2'
       }
     }
 
     stage('Production') {
       steps {
-        echo 'Production'
+        echo 'test 3'
       }
     }
 
+  }
+  environment {
+    Build = '1'
   }
 }
