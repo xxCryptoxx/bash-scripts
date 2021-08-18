@@ -21,6 +21,6 @@ pipeline {
 
   }
   environment {
-    Build = '1'
+    Build = 'null'
   }
 }
